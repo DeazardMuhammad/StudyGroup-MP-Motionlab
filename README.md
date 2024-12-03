@@ -10,3 +10,11 @@ tanggal 20 Nov mempelajari:
 - dikembangkan oleh google
 - cara kerja flutter sebagai penengah dart untuk ios dan android (jadi bisa cross platform)
 - mempelajari dasar dasar dart (print, tipe data, variable, tipedata null, aritmatika, percabangan, perulangan, fungsi, struktur data(list, map, class), )
+
+## Rangkuman Minggu ke-2: FLutter
+tanggal 28 Nov Mempelajari:
+- Widget Layouting
+Belajar bagaimana mengatur tata letak widget pada Flutter menggunakan:
+- Column: Untuk menyusun widget secara vertikal.
+- Row: Untuk menyusun widget secara horizontal.
+- Stack: Untuk menyusun widget secara bertumpuk sehingga widget dapat saling menutupi.
