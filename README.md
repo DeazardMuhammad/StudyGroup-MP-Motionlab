@@ -18,3 +18,11 @@ Belajar bagaimana mengatur tata letak widget pada Flutter menggunakan:
 - Column: Untuk menyusun widget secara vertikal.
 - Row: Untuk menyusun widget secara horizontal.
 - Stack: Untuk menyusun widget secara bertumpuk sehingga widget dapat saling menutupi.
+
+## Rangkuman Minggu ke-3:
+tanggal 4 Des Mempelajari:
+- Package: Kumpulan code dart yang sudah dibuat sebelumnya yang dapat diimpor dan digunakan kedalam proyek flutter kita (contoh : Lottie dan Google Fonts)
+bisa cari di : pub.dev dan fluttergems
+- Navigasi: ada push dan ada pop
+push: menambah rute baru
+pop: remove rute sekarang

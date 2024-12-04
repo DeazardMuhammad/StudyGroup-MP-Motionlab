@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'detail_screen.dart';
+import 'package:pertemuan2/pages/login_page.dart';
 
 void main() {
-  runApp(const MainApp());
+  runApp(const LoginPage());
 }
 
 class MainApp extends StatelessWidget {
@@ -29,7 +30,7 @@ class HomeScreen extends StatelessWidget {
         backgroundColor: Colors.white,
         title: Center(
           child: Image.asset(
-            "assets/images/logo.png", // Ganti dengan path logo Anda
+            "assets/images/logo.png", 
             height: 24,
           ),
         ),
