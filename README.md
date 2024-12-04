@@ -26,3 +26,4 @@ bisa cari di : pub.dev dan fluttergems
 - Navigasi: ada push dan ada pop
 push: menambah rute baru
 pop: remove rute sekarang
+- IDX: buat ngoding di website jika laptop mengalami lag
