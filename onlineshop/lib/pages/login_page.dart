@@ -4,31 +4,6 @@ import 'package:google_fonts/google_fonts.dart';
 import '../widgets/reusable_widget.dart';
 import 'register_page.dart';
 
-//   @override
-//   Widget build(BuildContext context) {
-//     return MaterialApp(
-//       home: Scaffold(
-//         body: ListView(
-//           children: [
-//             // Load a Lottie file from your assets
-//             Lottie.asset('assets/images/Animation - 1733313646874.json'),
-//             Text(
-//               'Login',
-//               textAlign: TextAlign.center,
-//               style: GoogleFonts.roboto(
-//                 textStyle: Theme.of(context).textTheme.displayLarge,
-//                 fontSize: 25,
-//                 fontWeight: FontWeight.w700,
-//               ),
-//             ),
-
-//           ],
-//         ),
-//       ),
-//     );
-//   }
-// }
-
 class LoginPage extends StatelessWidget {
   const LoginPage({Key? key});
 
@@ -79,7 +54,7 @@ class LoginPage extends StatelessWidget {
             ReusableButton(
               buttonText: 'Login',
               onPressed: () {
-                // Tambahkan logika login Anda di sini
+                // nanti ke home
               },
               color: Colors.green,
             ),
