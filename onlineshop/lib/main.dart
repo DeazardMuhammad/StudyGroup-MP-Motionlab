@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:pertemuan2/pages/login_page.dart';
 
 void main() {
-  runApp(const LoginPage());
+  runApp(const MainApp());
 }
 
 class MainApp extends StatelessWidget {
@@ -10,9 +10,13 @@ class MainApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: LoginPage(),
+      title: 'My App',
+      theme: ThemeData(
+        primarySwatch: Colors.green,
+      ),
+      home: const LoginPage(), 
     );
   }
 }

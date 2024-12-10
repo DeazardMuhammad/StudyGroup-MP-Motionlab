@@ -20,10 +20,15 @@ Belajar bagaimana mengatur tata letak widget pada Flutter menggunakan:
 - Stack: Untuk menyusun widget secara bertumpuk sehingga widget dapat saling menutupi.
 
 ## Rangkuman Minggu ke-3:
-tanggal 4 Des Mempelajari:
+tanggal 4 dan 5 Des Mempelajari:
+tanggal 4:
 - Package: Kumpulan code dart yang sudah dibuat sebelumnya yang dapat diimpor dan digunakan kedalam proyek flutter kita (contoh : Lottie dan Google Fonts)
 bisa cari di : pub.dev dan fluttergems
 - Navigasi: ada push dan ada pop
 push: menambah rute baru
 pop: remove rute sekarang
 - IDX: buat ngoding di website jika laptop mengalami lag
+tanggal 5: Izin tidak masuk
+
+## Rangkuman Minggu ke-4:
+

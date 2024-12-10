@@ -15,6 +15,7 @@ dependencies:
     google_fonts: ^6.2.1
 
 dev_dependencies:
+  flutter_native_splash: ^2.2.18
   flutter_test:
     sdk: flutter
   flutter_lints: ^4.0.0
@@ -26,3 +27,10 @@ flutter:
   # Menambahkan asset
   assets:
     - assets/images/
+
+flutter_native_splash:
+  color: "#00623B" # terserah sesuain warna sendiri
+  image: assets/images/LogoSplash.png 
+  android: true
+  ios: true
+  web: true
