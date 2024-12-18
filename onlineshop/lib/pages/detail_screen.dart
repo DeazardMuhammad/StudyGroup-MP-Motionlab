@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'cart_page.dart';
+import '../widgets/reusable_widget.dart';
+
 
 class DetailScreen extends StatelessWidget {
   const DetailScreen({super.key});
@@ -53,21 +56,22 @@ class DetailScreen extends StatelessWidget {
                 style: TextStyle(fontSize: 15, height: 1.5),
               ),
               const Spacer(),
-              Container(
-                width: double.infinity,
-                padding: const EdgeInsets.symmetric(vertical: 16),
-                color: const Color(0XFF00623B),
-                
-                child: const Text(
-                  "Add to Bag",
-                  style: TextStyle(
-                    fontSize: 20,
-                    fontWeight: FontWeight.w500,
-                    color: Colors.white,
-                  ),
-                  textAlign: TextAlign.center,
-                ),
+                SizedBox(
+              width: double.infinity,
+              child: ReusableButton(
+                buttonText: 'Add to Bag',
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const CartPage(),
+                    ),
+                  );
+                },
+                color: Colors.green,
               ),
+            ),
+              
             ],
           ),
         ),

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'detail_screen.dart';
+import 'cart_page.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -18,10 +19,20 @@ class HomeScreen extends StatelessWidget {
           ),
         ),
         leading: const Icon(Icons.menu, color: Colors.black),
-        actions: const [
+        actions: [
           Padding(
-            padding: EdgeInsets.only(right: 16.0),
-            child: Icon(Icons.shopping_cart, color: Colors.black),
+            padding: const EdgeInsets.only(right: 16.0),
+            child: IconButton(
+              icon: const Icon(Icons.shopping_cart, color: Colors.black),
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const CartPage(),
+                  ),
+                );
+              },
+            ),
           ),
         ],
       ),

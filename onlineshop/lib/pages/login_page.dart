@@ -20,7 +20,7 @@ class LoginPage extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Lottie.asset(
-              'assets/images/login_animation.json',
+              'assets/images/loginMotion.json',
               height: 200,
             ),
             Text(

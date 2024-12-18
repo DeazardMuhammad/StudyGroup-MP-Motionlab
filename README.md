@@ -31,4 +31,9 @@ pop: remove rute sekarang
 tanggal 5: Izin tidak masuk
 
 ## Rangkuman Minggu ke-4:
-
+sebelum masuk kelas install flutter pub global activate get_cli
+tanggal 11 Des Mempelajari:
+- State Management: proses pengelolaan state dalam suatu aplikasi state sendiri adalah data atau informasi yang digunakan untuk merepresentasikan kondisi aplikasi pada suatu waktu.
+- MVC adalah pola desain yang memisahkan aplikasi menjadi tiga komponen utama yaitu: Model (data), View (Tampilan), dan Controller (Penghubung)
+- GetX Reactive digunakan untuk langsung observasi perubahan didalam variable menggunakan .obs dan menggunakan tipe data reactive (tipedata)
+- GetX Simple tanpa menggunakan recipe
