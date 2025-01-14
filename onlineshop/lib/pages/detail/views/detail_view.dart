@@ -1,13 +1,16 @@
 import 'package:flutter/material.dart';
-import 'cart_page.dart';
-import '../widgets/reusable_widget.dart';
-
+import 'package:get/get.dart';
+import '../../cart/views/cart_view.dart';
+import '../../../widgets/reusable_widget.dart';
+import '../controllers/detail_controller.dart';
 
 class DetailScreen extends StatelessWidget {
-  const DetailScreen({super.key});
+  const DetailScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    final DetailController controller = Get.put(DetailController());
+
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.white,
@@ -17,7 +20,7 @@ class DetailScreen extends StatelessWidget {
         leading: IconButton(
           icon: const Icon(Icons.chevron_left),
           onPressed: () {
-            Navigator.pop(context);
+            Get.back();
           },
         ),
       ),
@@ -56,22 +59,14 @@ class DetailScreen extends StatelessWidget {
                 style: TextStyle(fontSize: 15, height: 1.5),
               ),
               const Spacer(),
-                SizedBox(
-              width: double.infinity,
-              child: ReusableButton(
-                buttonText: 'Add to Bag',
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => const CartPage(),
-                    ),
-                  );
-                },
-                color: Colors.green,
+              SizedBox(
+                width: double.infinity,
+                child: ReusableButton(
+                  buttonText: 'Add to Bag',
+                  onPressed: controller.navigateToCart,
+                  color: Colors.green,
+                ),
               ),
-            ),
-              
             ],
           ),
         ),

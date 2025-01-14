@@ -1,17 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:lottie/lottie.dart';
 import 'package:google_fonts/google_fonts.dart';
-import '../widgets/reusable_widget.dart';
-import 'register_page.dart';
-import 'home_screen.dart';
+import '../../../widgets/reusable_widget.dart';
+import '../controllers/login_controller.dart';
 
 class LoginPage extends StatelessWidget {
   const LoginPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    final TextEditingController emailController = TextEditingController();
-    final TextEditingController passwordController = TextEditingController();
+    final controller = Get.put(LoginController());
 
     return Scaffold(
       body: Padding(
@@ -40,13 +39,13 @@ class LoginPage extends StatelessWidget {
             const SizedBox(height: 20),
             ReusableTextField(
               hintText: 'Email',
-              controller: emailController,
+              controller: controller.emailController,
               prefixIcon: Icons.email,
             ),
             const SizedBox(height: 10),
             ReusableTextField(
               hintText: 'Password',
-              controller: passwordController,
+              controller: controller.passwordController,
               prefixIcon: Icons.lock,
               obscureText: true,
             ),
@@ -55,27 +54,13 @@ class LoginPage extends StatelessWidget {
               width: double.infinity,
               child: ReusableButton(
                 buttonText: 'Login',
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => const HomeScreen(),
-                    ),
-                  );
-                },
+                onPressed: controller.login,
                 color: Colors.green,
               ),
             ),
             const SizedBox(height: 10),
             TextButton(
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => const RegisterPage(),
-                  ),
-                );
-              },
+              onPressed: controller.navigateToRegister,
               child: Text(
                 "Don't have an account? Register",
                 style: GoogleFonts.poppins(color: Colors.blue),

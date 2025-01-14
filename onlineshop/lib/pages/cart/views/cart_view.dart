@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:pertemuan2/controller/cart_controller.dart';
-import 'payment_page.dart';
+import '../controllers/cart_controller.dart';
+import '../../payment/views/payment_view.dart';
 
 class CartPage extends StatelessWidget {
   const CartPage({super.key});
 
   @override
   Widget build(BuildContext context) {
-    final cartController = Get.put(CartController());
+    final CartController cartController = Get.put(CartController());
     return Obx(
       () => Scaffold(
         appBar: AppBar(
@@ -17,7 +17,7 @@ class CartPage extends StatelessWidget {
           leading: IconButton(
             icon: const Icon(Icons.chevron_left, color: Colors.black),
             onPressed: () {
-              Navigator.pop(context);
+              Get.back();
             },
           ),
           title: const Text(
@@ -30,20 +30,20 @@ class CartPage extends StatelessWidget {
           padding: const EdgeInsets.all(16.0),
           child: Column(
             children: [
-              
+              // Product 1
               Card(
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(12),
                 ),
                 margin: const EdgeInsets.only(bottom: 16),
-                elevation: 0, 
+                elevation: 0,
                 child: ListTile(
                   contentPadding: const EdgeInsets.all(12),
                   leading: Image.asset(
                     "assets/images/product_0.png",
-                    width: 50, 
+                    width: 50,
                     height: 50,
-                    fit: BoxFit.cover, 
+                    fit: BoxFit.cover,
                   ),
                   title: const Text(
                     "Mi Band 8 Pro - Brand New",
@@ -56,10 +56,10 @@ class CartPage extends StatelessWidget {
                   trailing: SizedBox(
                     width: 120,
                     child: Align(
-                      alignment: Alignment.bottomRight, 
+                      alignment: Alignment.bottomRight,
                       child: Container(
                         decoration: BoxDecoration(
-                          border: Border.all(color: Colors.green), 
+                          border: Border.all(color: Colors.green),
                           borderRadius: BorderRadius.circular(8),
                         ),
                         child: Row(
@@ -69,7 +69,7 @@ class CartPage extends StatelessWidget {
                               onPressed: () => cartController.quantityIncrement("product_0"),
                               icon: const Icon(Icons.add),
                               color: Colors.green,
-                              iconSize: 20, 
+                              iconSize: 20,
                             ),
                             Text(
                               "${cartController.getQuantity("product_0")}",
@@ -88,6 +88,7 @@ class CartPage extends StatelessWidget {
                   ),
                 ),
               ),
+              // Product 2
               Card(
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(12),
@@ -98,7 +99,7 @@ class CartPage extends StatelessWidget {
                   contentPadding: const EdgeInsets.all(12),
                   leading: Image.asset(
                     "assets/images/product_1.png",
-                    width: 50, 
+                    width: 50,
                     height: 50,
                     fit: BoxFit.cover,
                   ),
@@ -113,10 +114,10 @@ class CartPage extends StatelessWidget {
                   trailing: SizedBox(
                     width: 120,
                     child: Align(
-                      alignment: Alignment.bottomRight,  
+                      alignment: Alignment.bottomRight,
                       child: Container(
                         decoration: BoxDecoration(
-                          border: Border.all(color: Colors.green), 
+                          border: Border.all(color: Colors.green),
                           borderRadius: BorderRadius.circular(8),
                         ),
                         child: Row(
@@ -126,7 +127,7 @@ class CartPage extends StatelessWidget {
                               onPressed: () => cartController.quantityIncrement("product_1"),
                               icon: const Icon(Icons.add),
                               color: Colors.green,
-                              iconSize: 20, 
+                              iconSize: 20,
                             ),
                             Text(
                               "${cartController.getQuantity("product_1")}",
@@ -158,12 +159,7 @@ class CartPage extends StatelessWidget {
                         borderRadius: BorderRadius.circular(12),
                       ),
                     ),
-                    onPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => const PaymentPage()),
-                      );
-                    },
+                    onPressed: cartController.navigateToPayment,
                     child: const Text(
                       "Buy Now",
                       style: TextStyle(

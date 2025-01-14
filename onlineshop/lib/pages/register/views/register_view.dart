@@ -1,17 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'login_page.dart';
+import '../../login/views/login_view.dart';
+import '../controllers/register_controller.dart';
 
 class RegisterPage extends StatelessWidget {
   const RegisterPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    final TextEditingController fullNameController = TextEditingController();
-    final TextEditingController emailController = TextEditingController();
-    final TextEditingController passwordController = TextEditingController();
-    final TextEditingController confirmPasswordController =
-        TextEditingController();
+    final controller = Get.put(RegisterController());
 
     return Scaffold(
       body: Padding(
@@ -41,7 +39,7 @@ class RegisterPage extends StatelessWidget {
             ),
             const SizedBox(height: 30),
             TextField(
-              controller: fullNameController,
+              controller: controller.fullNameController,
               decoration: InputDecoration(
                 hintText: 'Full Name',
                 prefixIcon: const Icon(Icons.person),
@@ -52,7 +50,7 @@ class RegisterPage extends StatelessWidget {
             ),
             const SizedBox(height: 20),
             TextField(
-              controller: emailController,
+              controller: controller.emailController,
               decoration: InputDecoration(
                 hintText: 'Email',
                 prefixIcon: const Icon(Icons.email),
@@ -63,7 +61,7 @@ class RegisterPage extends StatelessWidget {
             ),
             const SizedBox(height: 20),
             TextField(
-              controller: passwordController,
+              controller: controller.passwordController,
               obscureText: true,
               decoration: InputDecoration(
                 hintText: 'Password',
@@ -75,7 +73,7 @@ class RegisterPage extends StatelessWidget {
             ),
             const SizedBox(height: 20),
             TextField(
-              controller: confirmPasswordController,
+              controller: controller.confirmPasswordController,
               obscureText: true,
               decoration: InputDecoration(
                 hintText: 'Confirm Password',
@@ -89,14 +87,7 @@ class RegisterPage extends StatelessWidget {
             SizedBox(
               width: double.infinity,
               child: ElevatedButton(
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => const LoginPage(),
-                    ),
-                  );
-                },
+                onPressed: controller.navigateToLoginPage,
                 style: ElevatedButton.styleFrom(
                   backgroundColor: Colors.green,
                   padding: const EdgeInsets.symmetric(vertical: 16),
@@ -113,13 +104,10 @@ class RegisterPage extends StatelessWidget {
                 ),
               ),
             ),
-
             const SizedBox(height: 10),
             Center(
               child: TextButton(
-                onPressed: () {
-                  Navigator.pop(context); 
-                },
+                onPressed: controller.navigateBack,
                 child: Text.rich(
                   TextSpan(
                     text: 'Already have an account? ',
@@ -128,6 +116,7 @@ class RegisterPage extends StatelessWidget {
                       TextSpan(
                         text: 'Login',
                         style: GoogleFonts.poppins(color: Colors.green),
+                        
                       ),
                     ],
                   ),

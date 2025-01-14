@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
-import 'detail_screen.dart';
-import 'cart_page.dart';
-
+import 'package:get/get.dart';
+import '../controllers/home_controller.dart';
 class HomeScreen extends StatelessWidget {
   const HomeScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    final HomeController controller = Get.put(HomeController());
+
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
@@ -24,14 +25,7 @@ class HomeScreen extends StatelessWidget {
             padding: const EdgeInsets.only(right: 16.0),
             child: IconButton(
               icon: const Icon(Icons.shopping_cart, color: Colors.black),
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => const CartPage(),
-                  ),
-                );
-              },
+              onPressed: controller.navigateToCart,
             ),
           ),
         ],
@@ -96,14 +90,7 @@ class HomeScreen extends StatelessWidget {
                   final productNames = ["Mi Band 8 Pro", "Men's Shirt", "Headphone", "Sneakers"];
                   final productPrices = ["\$54.00", "\$12.00", "\$30.00", "\$25.00"];
                   return GestureDetector(
-                    onTap: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => const DetailScreen(),
-                        ),
-                      );
-                    },
+                    onTap: controller.navigateToDetail,
                     child: _ProductCard(
                       image: "assets/images/product_$index.png",
                       name: productNames[index],

@@ -1,11 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:lottie/lottie.dart';
+import '../controllers/payment_controller.dart';
 
 class PaymentPage extends StatelessWidget {
   const PaymentPage({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final controller = Get.put(PaymentController());
+
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
@@ -13,9 +17,7 @@ class PaymentPage extends StatelessWidget {
         elevation: 0,
         leading: IconButton(
           icon: const Icon(Icons.chevron_left, color: Colors.black),
-          onPressed: () {
-            Navigator.pop(context);
-          },
+          onPressed: () => Get.back(),
         ),
         title: const Text(
           "Invoice",
@@ -38,16 +40,16 @@ class PaymentPage extends StatelessWidget {
               style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
             ),
             const SizedBox(height: 8),
-            const Text(
-              "\$66.00",
-              style: TextStyle(fontSize: 32, fontWeight: FontWeight.bold),
+            Text(
+              controller.totalPrice,
+              style: const TextStyle(fontSize: 32, fontWeight: FontWeight.bold),
             ),
             const SizedBox(height: 16),
             const Divider(),
             const SizedBox(height: 8),
-            buildRow("Invoice Number", "000085752257"),
-            buildRow("Transaction Date", "16 June 2023"),
-            buildRow("Payment Method", "Bank Transfer", isBold: true),
+            buildRow("Invoice Number", controller.invoiceNumber),
+            buildRow("Transaction Date", controller.transactionDate),
+            buildRow("Payment Method", controller.paymentMethod, isBold: true),
             const Divider(),
             const SizedBox(height: 8),
             const Align(
@@ -58,9 +60,9 @@ class PaymentPage extends StatelessWidget {
               ),
             ),
             const SizedBox(height: 8),
-            buildRow("Order Name", "Indra Mahesa"),
-            buildRow("Order Email", "indramahesa@gmail.com"),
-            buildRow("Total Price", "\$66.00"),
+            buildRow("Order Name", controller.orderName),
+            buildRow("Order Email", controller.orderEmail),
+            buildRow("Total Price", controller.totalPrice),
             const Spacer(),
             SizedBox(
               width: double.infinity,
@@ -72,9 +74,7 @@ class PaymentPage extends StatelessWidget {
                     borderRadius: BorderRadius.circular(12),
                   ),
                 ),
-                onPressed: () {
-                  Navigator.popUntil(context, (route) => route.isFirst);
-                },
+                onPressed: controller.navigateToHome,
                 child: const Text(
                   "Back to Home",
                   style: TextStyle(
@@ -83,7 +83,7 @@ class PaymentPage extends StatelessWidget {
                   ),
                 ),
               ),
-            )
+            ),
           ],
         ),
       ),
