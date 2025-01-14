@@ -37,3 +37,9 @@ tanggal 11 Des Mempelajari:
 - MVC adalah pola desain yang memisahkan aplikasi menjadi tiga komponen utama yaitu: Model (data), View (Tampilan), dan Controller (Penghubung)
 - GetX Reactive digunakan untuk langsung observasi perubahan didalam variable menggunakan .obs dan menggunakan tipe data reactive (tipedata)
 - GetX Simple tanpa menggunakan recipe
+
+## Rangkuman Minggu ke-5:
+mempelajari:
+- GetX Pattern: Pemanfaatan GetX dalam pengelolaan state dan navigasi aplikasi Flutter.
+- Get CLI: Menggunakan Get CLI untuk mempermudah pembuatan controller dan pengelolaan state dalam aplikasi.
+- Menggunakan GetX untuk Navigasi dan State Management
