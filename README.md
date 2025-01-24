@@ -1,45 +1,95 @@
-## Rangkuman Minggu ke-0: Version Control (Git)
-tanggal 13 Nov mempelajari:
-- Cara menggunakan github.
-- Mempelajari Konsep dasar Git: push, pull, branch, kolaborasi, log, commit, rebase, revert.
 
-## Rangkuman Minggu ke-1: FLutter dan dasar dasar Dart
-tanggal 20 Nov mempelajari:
-- flutter adalah tool yang dapat membantu kita untuk membuat aplikasi mobile
-- bahasa pemrogramannya menggunakan dart
-- dikembangkan oleh google
-- cara kerja flutter sebagai penengah dart untuk ios dan android (jadi bisa cross platform)
-- mempelajari dasar dasar dart (print, tipe data, variable, tipedata null, aritmatika, percabangan, perulangan, fungsi, struktur data(list, map, class), )
+---
 
-## Rangkuman Minggu ke-2: FLutter
-tanggal 28 Nov Mempelajari:
-- Widget Layouting
-Belajar bagaimana mengatur tata letak widget pada Flutter menggunakan:
-- Column: Untuk menyusun widget secara vertikal.
-- Row: Untuk menyusun widget secara horizontal.
-- Stack: Untuk menyusun widget secara bertumpuk sehingga widget dapat saling menutupi.
+# 📘 **Rangkuman Belajar Flutter & Git**  
 
-## Rangkuman Minggu ke-3:
-tanggal 4 dan 5 Des Mempelajari:
-tanggal 4:
-- Package: Kumpulan code dart yang sudah dibuat sebelumnya yang dapat diimpor dan digunakan kedalam proyek flutter kita (contoh : Lottie dan Google Fonts)
-bisa cari di : pub.dev dan fluttergems
-- Navigasi: ada push dan ada pop
-push: menambah rute baru
-pop: remove rute sekarang
-- IDX: buat ngoding di website jika laptop mengalami lag
-tanggal 5: Izin tidak masuk
+---
 
-## Rangkuman Minggu ke-4:
-sebelum masuk kelas install flutter pub global activate get_cli
-tanggal 11 Des Mempelajari:
-- State Management: proses pengelolaan state dalam suatu aplikasi state sendiri adalah data atau informasi yang digunakan untuk merepresentasikan kondisi aplikasi pada suatu waktu.
-- MVC adalah pola desain yang memisahkan aplikasi menjadi tiga komponen utama yaitu: Model (data), View (Tampilan), dan Controller (Penghubung)
-- GetX Reactive digunakan untuk langsung observasi perubahan didalam variable menggunakan .obs dan menggunakan tipe data reactive (tipedata)
-- GetX Simple tanpa menggunakan recipe
+## 📌 **Minggu ke-0: Version Control (Git)**  
+📅 **Tanggal**: 13 November  
+**Topik yang dipelajari**:  
+- Cara menggunakan **GitHub** sebagai platform version control.  
+- Konsep dasar Git:  
+  - `push` dan `pull` untuk mengunggah dan menarik perubahan.  
+  - `branch` untuk kolaborasi antar tim.  
+  - `log`, `commit`, `rebase`, dan `revert` untuk mengatur histori perubahan.  
 
-## Rangkuman Minggu ke-5:
-mempelajari:
-- GetX Pattern: Pemanfaatan GetX dalam pengelolaan state dan navigasi aplikasi Flutter.
-- Get CLI: Menggunakan Get CLI untuk mempermudah pembuatan controller dan pengelolaan state dalam aplikasi.
-- Menggunakan GetX untuk Navigasi dan State Management
+---
+
+## 📌 **Minggu ke-1: Flutter & Dasar-Dasar Dart**  
+📅 **Tanggal**: 20 November  
+**Topik yang dipelajari**:  
+- **Flutter**: Framework yang digunakan untuk membuat aplikasi mobile berbasis **cross-platform** (iOS & Android) menggunakan bahasa Dart.  
+- **Konsep dasar Dart**:  
+  - **Tipe Data**: Null safety, list, map, dan class.  
+  - **Logika Pemrograman**: Percabangan, perulangan, fungsi, dan aritmatika.  
+- **Keunggulan Flutter**: Dikembangkan oleh Google dan bertindak sebagai penghubung antara kode Dart dengan platform iOS/Android.  
+
+---
+
+## 📌 **Minggu ke-2: Widget Layouting di Flutter**  
+📅 **Tanggal**: 28 November  
+**Topik yang dipelajari**:  
+- **Widget Layouting**:  
+  - **Column**: Menyusun widget secara vertikal.  
+  - **Row**: Menyusun widget secara horizontal.  
+  - **Stack**: Menumpuk widget sehingga saling menutupi.  
+
+---
+
+## 📌 **Minggu ke-3: Package, Navigasi, dan IDX**  
+📅 **Tanggal**: 4 & 5 Desember  
+**Topik yang dipelajari**:  
+### 📅 **Tanggal 4 Desember**:  
+- **Package**:  
+  - Menggunakan package seperti **Lottie** dan **Google Fonts** untuk meningkatkan fitur aplikasi.  
+  - Sumber package: [pub.dev](https://pub.dev) & [fluttergems.dev](https://fluttergems.dev).  
+- **Navigasi**:  
+  - `push`: Menambah rute baru.  
+  - `pop`: Menghapus rute saat ini.  
+- **IDX**: Alternatif ngoding via website jika laptop mengalami lag.  
+
+### 📅 **Tanggal 5 Desember**:  
+- Tidak masuk kelas (izin).  
+
+---
+
+## 📌 **Minggu ke-4: State Management & MVC**  
+📅 **Tanggal**: 11 Desember  
+**Topik yang dipelajari**:  
+- **State Management**:  
+  - Proses pengelolaan data (state) dalam aplikasi.  
+- **MVC Pattern**:  
+  - **Model**: Mengelola data.  
+  - **View**: Menampilkan UI.  
+  - **Controller**: Penghubung antara Model dan View.  
+- **GetX Reactive**:  
+  - Mengobservasi perubahan data secara langsung menggunakan `.obs`.  
+- **GetX Simple**:  
+  - Mengelola state tanpa reactive.  
+
+---
+
+## 📌 **Minggu ke-5: GetX Pattern & CLI**  
+📅 **Tanggal**: 18 Desember  
+**Topik yang dipelajari**:  
+- **GetX Pattern**: Memanfaatkan GetX untuk:  
+  - Navigasi antar halaman.  
+  - Pengelolaan state.  
+- **Get CLI**: Alat untuk mempercepat pembuatan controller dan file terkait lainnya dalam Flutter.  
+
+---
+
+## 📌 **Minggu ke-6: API & Future**  
+📅 **Tanggal**: 19 Januari  
+**Topik yang dipelajari**:  
+- **Future**:  
+  - Objek Dart untuk mengelola proses **asinkron** seperti mengambil data dari server.  
+  - Menggunakan `async` dan `await` untuk mempermudah manajemen proses.  
+- **API (Application Programming Interface)**:  
+  - Jembatan komunikasi antara aplikasi client dan server.  
+  - Mengintegrasikan API di Flutter menggunakan package seperti `http` atau `dio`.  
+  - Operasi HTTP: `GET`, `POST`, `PUT`, `DELETE`.  
+  - Menampilkan data yang diambil dari server ke aplikasi Flutter.  
+
+---

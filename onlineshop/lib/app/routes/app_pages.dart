@@ -1,50 +1,62 @@
 import 'package:get/get.dart';
-
-//home
-import '../../pages/home/bindings/home_binding.dart';
-import '../../pages/home/views/home_view.dart';
-//cart 
-import '../../pages/cart/views/cart_view.dart';
-import '../../pages/cart/bindings/cart_binding.dart';
-//login
-import '../../pages/login/views/login_view.dart';
-import '../../pages/login/bindings/login_binding.dart';
-//detail
-import '../../pages/detail/views/detail_view.dart';
-import '../../pages/detail/bindings/detail_binding.dart';
-//payment
-import '../../pages/payment/views/payment_view.dart';
-import '../../pages/payment/bindings/payment_binding.dart';
-//register
-import '../../pages/register/views/register_view.dart';
-import '../../pages/register/bindings/register_binding.dart';
+import 'package:pertemuan2/pages/cart/bindings/cart_binding.dart';
+import 'package:pertemuan2/pages/cart/views/cart_view.dart';
+import 'package:pertemuan2/pages/detail_product/bindings/detail_product_binding.dart';
+import 'package:pertemuan2/pages/detail_product/views/detail_product_view.dart';
+import 'package:pertemuan2/pages/home/bindings/home_binding.dart';
+import 'package:pertemuan2/pages/home/views/home_view.dart';
+import 'package:pertemuan2/pages/invoice/bindings/invoice_binding.dart';
+import 'package:pertemuan2/pages/invoice/views/invoice_view.dart';
+import 'package:pertemuan2/pages/login/bindings/login_binding.dart';
+import 'package:pertemuan2/pages/login/views/login_view.dart';
+import 'package:pertemuan2/pages/register/bindings/register_binding.dart';
+import 'package:pertemuan2/pages/register/views/register_view.dart';
+import 'package:pertemuan2/pages/splash/bindings/splash_binding.dart';
+import 'package:pertemuan2/pages/splash/views/splash_view.dart';
 
 
 part 'app_routes.dart';
 
 class AppPages {
-  static const INITIAL = AppRoutes.LOGIN;
+  AppPages._();
 
-  static final pages = [
+  static const INITIAL = Routes.SPLASH;
+
+  static final routes = [
     GetPage(
-      name: AppRoutes.LOGIN,
-      page: () => const LoginPage(),
-      binding: LoginBinding(),
-    ),
-    GetPage(
-      name: AppRoutes.HOME,
-      page: () => const HomeScreen(),
+      name: _Paths.HOME,
+      page: () => const HomeView(),
       binding: HomeBinding(),
     ),
     GetPage(
-      name: AppRoutes.REGISTER,
-      page: () => const RegisterPage(),
+      name: _Paths.CART,
+      page: () => const CartView(),
+      binding: CartBinding(),
+    ),
+    GetPage(
+      name: _Paths.DETAIL_PRODUCT,
+      page: () => const DetailProductView(),
+      binding: DetailProductBinding(),
+    ),
+    GetPage(
+      name: _Paths.LOGIN,
+      page: () => const LoginView(),
+      binding: LoginBinding(),
+    ),
+    GetPage(
+      name: _Paths.REGISTER,
+      page: () => const RegisterView(),
       binding: RegisterBinding(),
     ),
     GetPage(
-      name: AppRoutes.PAYMENT,
-      page: () => const PaymentPage(),
-      binding: PaymentBinding(),
+      name: _Paths.INVOICE,
+      page: () => const InvoiceView(),
+      binding: InvoiceBinding(),
+    ),
+        GetPage(
+      name: _Paths.SPLASH,
+      page: () => const SplashView(),
+      binding: SplashBinding(),
     ),
   ];
 }

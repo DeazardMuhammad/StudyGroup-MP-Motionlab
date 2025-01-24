@@ -14,6 +14,8 @@ dependencies:
     cupertino_icons: ^1.0.8
     google_fonts: ^6.2.1
     get: ^4.6.6
+    dio: ^5.7.0
+    flutter_svg: ^2.0.17
 
 
 dev_dependencies:
@@ -29,10 +31,17 @@ flutter:
   # Menambahkan asset
   assets:
     - assets/images/
-
-flutter_native_splash:
-  color: "#00623B" # terserah sesuain warna sendiri
-  image: assets/images/LogoSplash.png 
-  android: true
-  ios: true
-  web: true
+    - assets/images/internal/
+    - assets/lottie/
+    - assets/svg/
+    - assets/svg/logos/
+  fonts:
+    - family: Inter
+      fonts:
+        - asset: assets/fonts/Inter-VariableFont_opsz,wght.ttf
+    - family: Roboto
+      fonts:
+        - asset: assets/fonts/Roboto/Roboto-Regular.ttf
+    - family: Raleway
+      fonts:
+        - asset: assets/fonts/Raleway/static/Raleway-Medium.ttf

@@ -1,70 +1,60 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:lottie/lottie.dart';
 import 'package:google_fonts/google_fonts.dart';
-import '../../../widgets/reusable_widget.dart';
+import 'package:lottie/lottie.dart';
+import 'package:pertemuan2/utils/colors.dart';
+import 'package:pertemuan2/widgets/confirmation_user_account.dart';
+import 'package:pertemuan2/widgets/input_field.dart';
 import '../controllers/login_controller.dart';
 
-class LoginPage extends StatelessWidget {
-  const LoginPage({Key? key}) : super(key: key);
+class LoginView extends GetView<LoginController> {
+  const LoginView({super.key});
 
   @override
   Widget build(BuildContext context) {
-    final controller = Get.put(LoginController());
-
     return Scaffold(
-      body: Padding(
-        padding: const EdgeInsets.all(16.0),
+      backgroundColor: AppColor.whiteColor2,
+      body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Lottie.asset(
-              'assets/images/loginMotion.json',
-              height: 200,
-            ),
+            Lottie.asset('assets/lottie/login_cart.json', height: 300),
             Text(
-              'Welcome!',
+              "Welcome!",
               style: GoogleFonts.poppins(
                 fontSize: 24,
                 fontWeight: FontWeight.bold,
               ),
             ),
             Text(
-              'Happy Shopping All',
+              "Happy Shopping Alrerfsl",
               style: GoogleFonts.poppins(
                 fontSize: 16,
-                color: Colors.grey,
+                fontWeight: FontWeight.w500,
+                color: AppColor.grayColor,
               ),
             ),
-            const SizedBox(height: 20),
-            ReusableTextField(
+            const InputField(
               hintText: 'Email',
-              controller: controller.emailController,
-              prefixIcon: Icons.email,
+              prefixIcon: Padding(
+                padding: EdgeInsets.all(8.0),
+                child: Icon(Icons.email), 
+              ),
             ),
-            const SizedBox(height: 10),
-            ReusableTextField(
+            const InputField(
               hintText: 'Password',
-              controller: controller.passwordController,
-              prefixIcon: Icons.lock,
-              obscureText: true,
-            ),
-            const SizedBox(height: 20),
-            SizedBox(
-              width: double.infinity,
-              child: ReusableButton(
-                buttonText: 'Login',
-                onPressed: controller.login,
-                color: Colors.green,
+              isPassword: true,
+              prefixIcon: Padding(
+                padding: EdgeInsets.all(8.0),
+                child: Icon(Icons.lock),
               ),
             ),
-            const SizedBox(height: 10),
-            TextButton(
-              onPressed: controller.navigateToRegister,
-              child: Text(
-                "Don't have an account? Register",
-                style: GoogleFonts.poppins(color: Colors.blue),
-              ),
+            ConfirmationUserAccount(
+              buttonText: "Login",
+              displayText: "Don't have an account? ",
+              onTap: () {
+                Get.toNamed('/register');
+              },
             ),
           ],
         ),

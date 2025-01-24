@@ -1,23 +1,20 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart'; 
-import 'pages/login/views/login_view.dart';
+import 'package:get/get.dart';
+import 'package:pertemuan2/app/routes/app_pages.dart';
 
 void main() {
-  runApp(const MainApp());
+  runApp(const MyApp());
 }
 
-class MainApp extends StatelessWidget {
-  const MainApp({super.key});
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return GetMaterialApp( 
+    return GetMaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'My App',
-      theme: ThemeData(
-        primarySwatch: Colors.green,
-      ),
-      home: const LoginPage(),
+      initialRoute: AppPages.INITIAL,
+      getPages: AppPages.routes,
     );
   }
 }

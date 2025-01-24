@@ -1,28 +1,34 @@
 import 'package:get/get.dart';
-import '../../payment/views/payment_view.dart';
+import 'package:pertemuan2/app/data/static_data.dart';
 
 class CartController extends GetxController {
-  final cartItems = <String, RxInt>{}.obs;
+  var quantities = <int>[].obs;
 
-  void quantityIncrement(String productId) {
-    if (cartItems.containsKey(productId)) {
-      cartItems[productId]!.value++;
-    } else {
-      cartItems[productId] = 1.obs;
+  @override
+  void onInit() {
+    super.onInit();
+    quantities.value =
+        List<int>.generate(StaticData.products.length, (index) => 1);
+  }
+
+  void increaseQuantity(int index) {
+    if (index < quantities.length) {
+      quantities[index]++;
     }
   }
 
-  void quantityDecrement(String productId) {
-    if (cartItems.containsKey(productId) && cartItems[productId]!.value > 0) {
-      cartItems[productId]!.value--;
+  void decreaseQuantity(int index) {
+    if (index < quantities.length && quantities[index] > 1) {
+      quantities[index]--;
     }
   }
 
-  int getQuantity(String productId) {
-    return cartItems[productId]?.value ?? 0;
-  }
-
-  void navigateToPayment() {
-    Get.to(() => const PaymentPage());
+  double calculateTotalPrice() {
+    double total = 0.0;
+    for (int i = 0; i < quantities.length; i++) {
+      double price = StaticData.products[i]['price'];
+      total += price * quantities[i];
+    }
+    return total;
   }
 }
