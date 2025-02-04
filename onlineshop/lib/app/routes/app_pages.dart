@@ -9,10 +9,13 @@ import 'package:pertemuan2/pages/invoice/bindings/invoice_binding.dart';
 import 'package:pertemuan2/pages/invoice/views/invoice_view.dart';
 import 'package:pertemuan2/pages/login/bindings/login_binding.dart';
 import 'package:pertemuan2/pages/login/views/login_view.dart';
+import 'package:pertemuan2/pages/profile/binding/profile_binding.dart';
+import 'package:pertemuan2/pages/profile/views/profile_view.dart';
 import 'package:pertemuan2/pages/register/bindings/register_binding.dart';
 import 'package:pertemuan2/pages/register/views/register_view.dart';
 import 'package:pertemuan2/pages/splash/bindings/splash_binding.dart';
 import 'package:pertemuan2/pages/splash/views/splash_view.dart';
+
 
 
 part 'app_routes.dart';
@@ -40,7 +43,7 @@ class AppPages {
     ),
     GetPage(
       name: _Paths.LOGIN,
-      page: () => const LoginView(),
+      page: () =>  LoginView(),
       binding: LoginBinding(),
     ),
     GetPage(
@@ -57,6 +60,10 @@ class AppPages {
       name: _Paths.SPLASH,
       page: () => const SplashView(),
       binding: SplashBinding(),
+    ),GetPage(
+      name: _Paths.PROFILE,
+      page: () => const ProfileView(),
+      binding: ProfileBinding(),
     ),
   ];
 }

@@ -70,6 +70,9 @@ class RegisterView extends GetView<RegisterController> {
               onTap: () { 
                 Get.back();
               },
+              onLoginTap: () {
+                Get.toNamed('/login');
+              },
             ),
           ],
         ),

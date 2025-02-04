@@ -8,7 +8,8 @@ import 'package:pertemuan2/widgets/input_field.dart';
 import '../controllers/login_controller.dart';
 
 class LoginView extends GetView<LoginController> {
-  const LoginView({super.key});
+  final TextEditingController usernameController = TextEditingController();
+  final TextEditingController passwordController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -34,14 +35,16 @@ class LoginView extends GetView<LoginController> {
                 color: AppColor.grayColor,
               ),
             ),
-            const InputField(
-              hintText: 'Email',
+            InputField(
+              controller: usernameController,
+              hintText: 'Username',
               prefixIcon: Padding(
                 padding: EdgeInsets.all(8.0),
-                child: Icon(Icons.email), 
+                child: Icon(Icons.person),
               ),
             ),
-            const InputField(
+            InputField(
+              controller: passwordController,
               hintText: 'Password',
               isPassword: true,
               prefixIcon: Padding(
@@ -54,6 +57,10 @@ class LoginView extends GetView<LoginController> {
               displayText: "Don't have an account? ",
               onTap: () {
                 Get.toNamed('/register');
+              },
+              onLoginTap: () {
+                controller.login(
+                    usernameController.text, passwordController.text);
               },
             ),
           ],
