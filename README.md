@@ -93,3 +93,17 @@
   - Menampilkan data yang diambil dari server ke aplikasi Flutter.  
 
 ---
+
+---
+
+## 📌 **Minggu ke-7: Working with Local Storage**
+**Topik yang dipelajari**  
+- **Local Storage**:  
+  - Menyimpan data secara permanen tanpa koneksi internet.  
+  - Berguna untuk pengaturan aplikasi, data pengguna, atau informasi lainnya.  
+- **Jenis Local Storage di Flutter**:  
+  1. **SharedPreferences**: Key-value storage, cocok untuk data kecil seperti pengaturan atau status login.  
+  2. **Hive**: Database ringan, mendukung key-value dan objek Dart, menggunakan **Box** untuk penyimpanan async.  
+  3. **SQLite**: Database relasional berbasis tabel, cocok untuk struktur data kompleks dengan relasi antar tabel.  
+
+---
